@@ -44,34 +44,31 @@ public class CarTest
     public void tearDown()
     {
     }
-
     @Test
     public void testAddGas()
     {
         Car car = new Car( 50.0 );
         car.addGas( 5.0 );
-        assertEquals( 5.0, car.getGasInTank(), 1e-6 );
-        car.addGas( 7.0 );
-        assertEquals( 12.0, car.getGasInTank(), 1e-6 );
+        assertEquals( 5.0, car.getGasInTank(), 1e-6);
+
+
     }
-    
     @Test
     public void testGetGasInTank()
     {
-        Car car = new Car( 50.0 );
-        assertEquals( 0.0, car.getGasInTank(), 1e-6 );
-        car.addGas( 10.0 );
+        Car car = new Car(50.0);
+        assertEquals(0.0, car.getGasInTank(), 1e-6 );
+        car.addGas(10.0);
         assertEquals( 10.0, car.getGasInTank(), 1e-6 );
     }
-    
     @Test
     public void testDrive()
     {
-        Car car = new Car( 50.0 );
-        car.addGas( 10.0 );
-        car.drive( 200.0 );
-        assertEquals( 6.0, car.getGasInTank(), 1e-6 );
-        car.drive( 25.0 );
-        assertEquals( 5.5, car.getGasInTank(), 1e-6 );
+        Car car = new Car(50.0);
+        car.addGas(10.0);
+        car.drive(200.0);
+        assertEquals(6.0, car.getGasInTank(), 1e-6 );
+        car.drive(25);
+        assertEquals(5.5,car.getGasInTank(),1e-6);
     }
 }

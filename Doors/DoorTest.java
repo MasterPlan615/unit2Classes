@@ -21,26 +21,33 @@ public class DoorTest
      */
     public DoorTest()
     {
-        Door door = new Door("Front","Open");
+        // initialise instance variables
+        x = 0;
     }
     
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @Before
+    public void setUp()
+    {
+    }
+
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @After
+    public void tearDown()
+    {
+    }
+
     @Test
     public void testCloseDoor()
     {
         close();
-    }
-    
-    @Test
-    public void testGetState()
-    {
-        getState();
-        assertEquals( "closed", getState());
-    }
-    
-    @Test
-    public void testGetName()
-    {
-        getName();
-        assertEquals( "Front", getName());
     }
 }
