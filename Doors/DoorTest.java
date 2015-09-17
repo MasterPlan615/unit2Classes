@@ -44,10 +44,16 @@ public class DoorTest
     public void tearDown()
     {
     }
-
+
     @Test
-    public void testCloseDoor()
+    public void testDoor()
     {
-        close();
+        Door door = new Door("Front","opened");
+        door.close();
+        door.getState();
+        door.setState("opened");
+        door.setName("Back");
+        door.getName();
     }
 }
+
