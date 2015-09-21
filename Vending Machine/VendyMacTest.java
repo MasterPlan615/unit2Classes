@@ -52,7 +52,8 @@ public class VendyMacTest
         scp261.fillUp( 10 );
         scp261.getCanCount();
         scp261.fillUp( 999 );
-        scp261.getCanCount();
+        assertEquals(scp261.getCanCount(),1039);
+        
     }
     
     @Test
