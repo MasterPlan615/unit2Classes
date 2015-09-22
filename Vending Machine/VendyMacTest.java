@@ -50,10 +50,9 @@ public class VendyMacTest
     {
         VendyMac scp261 = new VendyMac( 30 );
         scp261.fillUp( 10 );
-        scp261.getCanCount();
+        assertEquals( scp261.getCanCount(), 40 );
         scp261.fillUp( 999 );
-        assertEquals(scp261.getCanCount(),1039);
-        
+        assertEquals( scp261.getCanCount(), 1039 );
     }
     
     @Test
@@ -61,12 +60,12 @@ public class VendyMacTest
     {
         VendyMac scp261 = new VendyMac();
         scp261.insertToken();
-        scp261.getCanCount();
-        scp261.getTokenCount();
+        assertEquals( scp261.getCanCount(), 9 );
+        assertEquals( scp261.getTokenCount(), 1 );
         scp261.fillUp( 60 );
         scp261.insertToken();
-        scp261.getCanCount();
-        scp261.getTokenCount();
+        assertEquals( scp261.getCanCount(), 68 );
+        assertEquals( scp261.getTokenCount(), 2 );
     }
     
 }
