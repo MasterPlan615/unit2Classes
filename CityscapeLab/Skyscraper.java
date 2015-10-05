@@ -11,35 +11,41 @@ public class Skyscraper
     private int yTop;
     private int width;
     private int levels;
+    private int columns;
+    private int height;
     
     /** Constructs a skyscraper with a given top left corner.
      * @param x the x-coordinate of the top-left corner
      * @param y the y-coordinate of the top-left corner
      */
-    public Skyscraper( int x, int y, int w, int l )
+    public Skyscraper( int x, int y, int w, int h, int l, int c)
     {
         xLeft = x;
         yTop = y;
         width = w;
         levels = l;
+        columns = c;
+        height = h;
     }
     /** Draws skyscrapers
      * @param g2 the graphics content
      */
     public void draw( Graphics2D g2 )
     {
-        int i = 0;
         int var = xLeft;
         int var2 = yTop;
-        while (i<levels)
+        for (int a = 0; a < levels; a += 1)
         {
-            Rectangle window = new Rectangle(var, var2 += 10, 10, 10);
-            Rectangle window2 = new Rectangle(var+=10, var2, 10, 10);
-            g2.draw(window);
-            g2.draw(window2);
-            i++;
+            for (int b = 0; b < columns; b += 1)
+            {
+                Rectangle window = new Rectangle(var + 10, var2 + 10, 10, 10);
+                g2.draw(window);
+                var += 20;
+            }
+            var = xLeft;
+            var2 += 20;
         }
-        Rectangle backbuild1 = new Rectangle(xLeft, yTop, width/3, width*2/3);
+        Rectangle backbuild1 = new Rectangle(xLeft, yTop, width, height);
         g2.draw(backbuild1);
         
     }
