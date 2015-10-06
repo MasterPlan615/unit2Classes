@@ -3,6 +3,9 @@ import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.Color;
+import java.util.Random;
+
 
 /** A skyscraper that can be positioned anywhere on the screen */
 public class Skyscraper
@@ -34,19 +37,48 @@ public class Skyscraper
     {
         int var = xLeft;
         int var2 = yTop;
+        Random color = new Random();
+        int newcolor = color.nextInt(6);
+        if (newcolor == 1)
+        {
+            g2.setColor(Color.RED);
+        }
+        else if (newcolor == 2)
+        {
+            g2.setColor(Color.ORANGE);
+        }
+        else if (newcolor == 3)
+        {
+            g2.setColor(Color.YELLOW);
+        }
+        else if (newcolor == 4)
+        {
+            g2.setColor(Color.GREEN);
+        }
+        else if (newcolor == 5)
+        {
+            g2.setColor(Color.BLUE);
+        }
+        else if (newcolor == 6)
+        {
+            g2.setColor(Color.MAGENTA);
+        }
+        Rectangle backbuild = new Rectangle(xLeft, yTop, width, height);
+        g2.draw(backbuild);
+        g2.fill(backbuild);
         for (int a = 0; a < levels; a += 1)
         {
             for (int b = 0; b < columns; b += 1)
             {
                 Rectangle window = new Rectangle(var + 10, var2 + 10, 10, 10);
+                g2.setColor(Color.CYAN);
                 g2.draw(window);
+                g2.fill(window);
                 var += 20;
             }
             var = xLeft;
             var2 += 20;
         }
-        Rectangle backbuild1 = new Rectangle(xLeft, yTop, width, height);
-        g2.draw(backbuild1);
         
     }
 }
