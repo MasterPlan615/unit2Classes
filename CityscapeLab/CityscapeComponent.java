@@ -32,8 +32,10 @@ public class CityscapeComponent extends JComponent
         Graphics2D g2 = (Graphics2D) g;
         Skyscraper skyscraper1 = new Skyscraper( 400, 300, 90, 200, 9, 4);
         Skyscraper skyscraper2 = new Skyscraper( 600, 200, 50, 300, 14, 2);
-        Skyscraper skyscraper3 = new Skyscraper( 500, 400, 100, 100, 4, 4);
+        Skyscraper skyscraper3 = new Skyscraper( 500, 400, 90, 100, 4, 4);
         Skyscraper skyscraper4 = new Skyscraper( 200, 250, 75, 250, 12, 3);
+        Skyscraper skyscraper5 = new Skyscraper( 280, 350, 115, 300, 7, 5);
+        skyscraper5.draw(g2);
         skyscraper1.draw(g2);
         skyscraper2.draw(g2);
         skyscraper3.draw(g2);
