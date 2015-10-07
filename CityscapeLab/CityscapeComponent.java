@@ -1,8 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import javax.swing.JComponent;
+import javax.swing.JPanel;
 import java.awt.Color;
-
 
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
@@ -11,16 +10,17 @@ import java.awt.Color;
  * @author @gcschmit
  * @version 18 July 2014
  */
-public class CityscapeComponent extends JComponent
-{
+public class CityscapeComponent extends JPanel
     // define the objects in your Cityscape as instance variables
-    // ...
-    
-    
+{    // ...
+    private String tod;
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
-    
+    public CityscapeComponent( String t )
+    {
+        tod = t;
+    }
     
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -30,6 +30,19 @@ public class CityscapeComponent extends JComponent
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
+        if (tod.equals("Day"))
+        {
+            setBackground(Color.CYAN);
+        }
+        else if (tod.equals("Evening"))
+        {
+            setBackground(Color.ORANGE);
+        }
+        else if (tod.equals("Night"))
+        {
+            setBackground(Color.BLACK);
+        }
+        super.paintComponent(g2);
         Skyscraper skyscraper1 = new Skyscraper( 400, 300, 90, 200, 9, 4);
         Skyscraper skyscraper2 = new Skyscraper( 600, 200, 50, 300, 14, 2);
         Skyscraper skyscraper3 = new Skyscraper( 500, 400, 90, 100, 4, 4);
@@ -40,7 +53,7 @@ public class CityscapeComponent extends JComponent
         skyscraper2.draw(g2);
         skyscraper3.draw(g2);
         skyscraper4.draw(g2);
-        Sky background = new Sky();
+        Sky background = new Sky(tod);
         background.draw(g2);
         // invoke the draw method on each object in your Cityscape
         // ...

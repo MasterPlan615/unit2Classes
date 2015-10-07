@@ -39,6 +39,7 @@ public class Skyscraper
         int var2 = yTop;
         Random color = new Random();
         int newcolor = color.nextInt(9);
+        //Remove colors that match with background
         if (newcolor == 1)
         {
             g2.setColor(Color.RED);

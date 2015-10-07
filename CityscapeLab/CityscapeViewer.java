@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.util.Scanner;
 
 
 /**
@@ -27,11 +28,12 @@ public class CityscapeViewer
         
         // use the Scanner class to prompt the user for some configurable aspect of the cityscape
         // ...
-        
-        
+        Scanner in = new Scanner(System.in);
+        System.out.print("What time of day do you prefer? (Day, Evening, Night (First letter caps!): ");
+        String tod = in.next();
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
-        CityscapeComponent component = new CityscapeComponent( /* pass the user-specified value */ );
+        CityscapeComponent component = new CityscapeComponent( tod );
         frame.add(component);
         
         // make the frame visible which will result in the paintComponent method being invoked on the
