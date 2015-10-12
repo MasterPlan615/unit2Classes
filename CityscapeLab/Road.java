@@ -6,25 +6,24 @@ import java.awt.geom.Point2D;
 import java.awt.Color;
 
 
-/** The sky with assorted objects */
-public class Sky
+/** The road of the city */
+public class Road
 {
-    private String tod;
+    private int roadx;
     
-    /** Constructs the sky.
-     * @param x the x-coordinate of the top-left corner
-     * @param y the y-coordinate of the top-left corner(?)
+    /** Constructs the road.
+     * @param   x   The x-coordinate of the top left corner (where the road will be built)
      */
-    public Sky( String to )
+    public Road( int x )
     {
-        tod = to;
+        int roadx = x;
     }
-    /** Draws the sky.
+    /** Draws the road.
      * @param g2 the graphics content
      */
     public void draw( Graphics2D g2 )
     {
-        int roadx = 30;
+        
         Rectangle asphalt = new Rectangle( 0, 500, 800, 100);
         g2.setColor(Color.BLACK);
         //Set road to gray if night
@@ -38,20 +37,7 @@ public class Sky
             g2.fill(roadmark);
             roadx += 100;
         }
-        Ellipse2D.Double sun = new Ellipse2D.Double( 50, 50, 100, 100);
-        if (tod.equals("Day"))
-        {
-            g2.setColor(Color.YELLOW);
-        }
-        else if (tod.equals("Evening"))
-        {
-            g2.setColor(Color.RED);
-        }
-        else if (tod.equals("Night"))
-        {
-            g2.setColor(Color.GRAY);
-        }
-        g2.fill(sun);
-        g2.draw(sun);
     }
 }
+
+

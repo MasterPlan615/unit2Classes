@@ -53,8 +53,10 @@ public class CityscapeComponent extends JPanel
         skyscraper2.draw(g2);
         skyscraper3.draw(g2);
         skyscraper4.draw(g2);
-        Sky background = new Sky(tod);
-        background.draw(g2);
+        Road road1 = new Road(30);
+        road1.draw(g2);
+        Sun sun1 = new Sun(tod);
+        sun1.draw(g2);
         // invoke the draw method on each object in your Cityscape
         // ...
         

@@ -20,6 +20,10 @@ public class Skyscraper
     /** Constructs a skyscraper with a given top left corner.
      * @param x the x-coordinate of the top-left corner
      * @param y the y-coordinate of the top-left corner
+     * @param w the width of the skyscraper
+     * @param h the height of the skyscraper
+     * @param l the levels/floors the skyscraper has
+     * @param c the amount of rooms a skyscraper has per level
      */
     public Skyscraper( int x, int y, int w, int h, int l, int c)
     {
@@ -44,10 +48,6 @@ public class Skyscraper
         {
             g2.setColor(Color.RED);
         }
-        else if (newcolor == 2)
-        {
-            g2.setColor(Color.ORANGE);
-        }
         else if (newcolor == 3)
         {
             g2.setColor(Color.YELLOW);
@@ -63,10 +63,6 @@ public class Skyscraper
         else if (newcolor == 6)
         {
             g2.setColor(Color.MAGENTA);
-        }
-        else if (newcolor == 7)
-        {
-            g2.setColor(Color.CYAN);
         }
         else if (newcolor == 8)
         {
@@ -86,10 +82,6 @@ public class Skyscraper
                 {
                     g2.setColor(Color.RED);
                 }
-                else if (newcolor2 == 2)
-                {
-                    g2.setColor(Color.ORANGE);
-                }
                 else if (newcolor2 == 3)
                 {
                     g2.setColor(Color.YELLOW);
@@ -105,10 +97,6 @@ public class Skyscraper
                 else if (newcolor2 == 6)
                 {
                     g2.setColor(Color.MAGENTA);
-                }
-                else if (newcolor2 == 7)
-                {
-                    g2.setColor(Color.CYAN);
                 }
                 else if (newcolor2 == 8)
                 {
